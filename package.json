@@ -1,6 +1,6 @@
 {
   "name": "simple-ssi-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple ssi server use connect-ssi",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^6.1.0",
     "connect": "^3.7.0",
     "connect-logger": "0.0.1",
     "connect-ssi": "^1.1.1",
