@@ -11,6 +11,7 @@ program
   .version(package_json.version)
   .option('-p, --port <number>', 'port number', (arg)=>{ return parseInt(arg); }, 3000)
   .option('-d, --dir <path>', 'docment root dir', baseDir)
+  .option('-i, --index', 'use direcroty index', (arg)=>{ return true; }, false)
   .parse(process.argv);
 
 console.log('start http server')
@@ -22,4 +23,5 @@ app.use(ssi({
   ext: '.html'
 }));
 app.use(serveStatic(program.dir));
+if(program.index) app.use(require('serve-index')(program.dir, {'icons': true}));
 app.listen(program.port);
